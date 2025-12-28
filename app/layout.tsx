@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
+import ConsoleGreeting from "./components/ConsoleGreeting";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -31,7 +32,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${inter.variable} ${spaceMono.variable} antialiased`}>
+      <body className={`${playfair.variable} ${inter.variable} ${spaceMono.variable} antialiased bg-[#F5F5F5]`}>
+        <ConsoleGreeting />
         {children}
       </body>
     </html>

@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  body {
+    @apply bg-[#F5F5F5] text-[#000000];
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  * {
+    scroll-padding-top: 100px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Fade in + Slide up animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade in + Scale animation */
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Simple fade in */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fadeInUp {
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+  }
+
+  .animate-fadeInScale {
+    opacity: 0;
+    animation: fadeInScale 1.8s ease-out forwards;
+  }
+
+  .animate-fadeIn {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+
+  .delay-300 {
+    animation-delay: 0.5s;
+  }
+
+  .delay-600 {
+    animation-delay: 1s;
+  }
+
+  /* Navigation link hover animation */
+  .nav-link {
+    position: relative;
+    color: #666666;
+    transition: all 0.4s ease;
+    display: inline-block;
+    padding-bottom: 4px;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #000000;
+    transition: width 0.4s ease;
+  }
+
+  .nav-link:hover {
+    color: #000000;
+    transform: scale(1.05);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Active state for current page */
+  .nav-link.active {
+    color: #000000 !important;
+  }
+
+  .nav-link.active::after {
+    width: 100% !important;
+  }
 }
