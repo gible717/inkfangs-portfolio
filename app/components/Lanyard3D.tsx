@@ -253,7 +253,9 @@ function Band({ maxSpeed = 25, minSpeed = 0, isMobile = false }: BandProps) {
         </RigidBody>
       </group>
       <mesh ref={band}>
+        {/* @ts-expect-error - meshline types */}
         <meshLineGeometry />
+        {/* @ts-expect-error - meshline types */}
         <meshLineMaterial
           color="#ffffff"
           depthTest={false}

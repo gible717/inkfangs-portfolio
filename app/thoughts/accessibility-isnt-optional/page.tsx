@@ -11,7 +11,7 @@ export default function Article() {
         <article className="max-w-4xl mx-auto">
 
           {/* Article Header */}
-          <header className="mb-12 pb-8 border-b border-[#D1D1D1]">
+          <header className="mb-12 pb-8">
             <div className="text-xs text-[#666666] mb-4 uppercase tracking-widest">
               Advocacy
             </div>
@@ -25,6 +25,8 @@ export default function Article() {
               <span>•</span>
               <span>by inkfangs</span>
             </div>
+            {/* Border line - longer than text but not full width */}
+            <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto"></div>
           </header>
 
           {/* Article Content */}
@@ -309,23 +311,6 @@ export default function Article() {
 
           </div>
 
-          {/* Author Bio */}
-          <div className="mt-16 pt-8 border-t border-[#D1D1D1]">
-            <div className="flex items-start gap-6">
-              <div className="w-20 h-20 bg-[#D1D1D1]/30 rounded-full flex-shrink-0"></div>
-              <div>
-                <p className="font-bold text-[#000000] mb-2">Written by Noufah</p>
-                <p className="text-sm text-[#666666] mb-4">
-                  Final semester CS110 student at UiTM Perlis, transitioning to HR Management.
-                  Mahasiswa OKU and accessibility advocate. Building technology that works for everyone.
-                </p>
-                <Link href="/bio" className="text-sm text-[#000000] underline hover:text-[#3A4F5B]">
-                  Read my full story →
-                </Link>
-              </div>
-            </div>
-          </div>
-
           {/* Related Articles */}
           <div className="mt-16 pt-8 border-t border-[#D1D1D1]">
             <h3 className="text-2xl font-bold font-serif text-[#000000] mb-8">
@@ -334,31 +319,31 @@ export default function Article() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Article 1 */}
-              <Link href="/thoughts/i-hope-this-doesnt-happen-to-you" className="group">
+              <Link href="/thoughts/the-voice-that-codes-gitc-2018-and-jaws" className="group">
                 <article className="bg-white/40 backdrop-blur-sm border border-[#D1D1D1]/20 p-6 hover:bg-white/60 hover:shadow-md transition-all duration-300">
                   <div className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
-                    Vulnerability
+                    Accessibility • Perspective
                   </div>
                   <h4 className="text-xl font-bold font-serif text-[#000000] mb-3 group-hover:text-[#3A4F5B] transition-colors">
-                    I Hope This Doesn't Happen to You
+                    The Voice That Codes: GITC 2018 and JAWS
                   </h4>
                   <p className="text-sm text-[#666666]">
-                    There's a vulnerability in writing code that people don't talk about. Every function you write is a confession.
+                    Watching a blind competitor code at GITC changed how I think about inclusion and accessibility forever.
                   </p>
                 </article>
               </Link>
 
               {/* Article 2 */}
-              <Link href="/thoughts/14460-lines-to-ask-one-question" className="group">
+              <Link href="/thoughts/from-syntax-to-empathy" className="group">
                 <article className="bg-white/40 backdrop-blur-sm border border-[#D1D1D1]/20 p-6 hover:bg-white/60 hover:shadow-md transition-all duration-300">
                   <div className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
-                    Technical Deep Dive
+                    Personal Journey
                   </div>
                   <h4 className="text-xl font-bold font-serif text-[#000000] mb-3 group-hover:text-[#3A4F5B] transition-colors">
-                    14,460 Lines to Ask One Question
+                    From Syntax to Empathy: Why I'm Choosing HR
                   </h4>
                   <p className="text-sm text-[#666666]">
-                    InventStor wasn't just about inventory management. It was about asking: How do we serve people better?
+                    I'm good at code. That's why I'm leaving it. This is the story of how InventStor showed me what I actually love.
                   </p>
                 </article>
               </Link>

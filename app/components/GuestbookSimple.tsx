@@ -121,7 +121,23 @@ export default function GuestbookSimple() {
         </p>
       </form>
 
-      <p className="text-center text-sm text-[#666666] mt-16 font-serif italic">
+      {/* Links to Credibility Pages */}
+      <div className="text-center mt-16 pt-8 border-t border-[#D1D1D1]">
+        <p className="text-sm text-[#666666] mb-4">
+          Curious how this site was built?
+        </p>
+        <div className="flex gap-4 justify-center text-sm flex-wrap">
+          <a href="/how-i-built-this" className="text-[#000000] underline hover:text-[#3A4F5B] transition-colors">
+            How I Built This
+          </a>
+          <span className="text-[#666666]">•</span>
+          <a href="/changelog" className="text-[#000000] underline hover:text-[#3A4F5B] transition-colors">
+            Changelog
+          </a>
+        </div>
+      </div>
+
+      <p className="text-center text-sm text-[#666666] mt-8 font-serif italic">
         inkfangs • 2025
       </p>
     </div>

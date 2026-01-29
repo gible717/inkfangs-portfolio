@@ -1,6 +1,7 @@
 "use client";
 import Header from "../../components/Header";
 import Link from "next/link";
+import CountUp from "../../components/CountUp";
 
 export default function Article() {
   return (
@@ -11,12 +12,12 @@ export default function Article() {
         <article className="max-w-4xl mx-auto">
 
           {/* Article Header */}
-          <header className="mb-12 pb-8 border-b border-[#D1D1D1]">
+          <header className="mb-12 pb-8">
             <div className="text-xs text-[#666666] mb-4 uppercase tracking-widest">
               Technical Deep Dive
             </div>
             <h1 className="text-5xl md:text-6xl font-bold font-serif text-[#000000] mb-6 leading-tight">
-              14,460 Lines to Ask One Question
+              ~18,000+ Lines to Ask One Question
             </h1>
             <div className="flex gap-4 text-sm text-[#666666] mb-6">
               <span>February 12, 2025</span>
@@ -25,6 +26,8 @@ export default function Article() {
               <span>•</span>
               <span>by inkfangs</span>
             </div>
+            {/* Border line - longer than text but not full width */}
+            <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto"></div>
           </header>
 
           {/* Article Content */}
@@ -46,7 +49,7 @@ export default function Article() {
             {/* Pull Quote */}
             <blockquote className="my-12 py-8 border-l-4 border-[#000000] pl-8 bg-[#FFFFFF]/60 backdrop-blur-sm">
               <p className="text-2xl md:text-3xl font-serif italic text-[#000000] leading-relaxed">
-                "14,460 lines of code. 90+ files. 7-table database. One question: How do we serve people better?"
+                "~18,000+ lines of code. 98 PHP files. 8-table database. 116 commits. One question: How do we serve people better?"
               </p>
             </blockquote>
 
@@ -79,15 +82,15 @@ export default function Article() {
               <ul className="space-y-2 text-[#000000]">
                 <li className="flex items-start gap-3">
                   <span className="text-[#666666]">•</span>
-                  <span><strong>Backend:</strong> PHP (native, no framework—full control)</span>
+                  <span><strong>Backend:</strong> PHP 8.3 (native, no framework—full control)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#666666]">•</span>
-                  <span><strong>Database:</strong> MySQL with 7 interconnected tables</span>
+                  <span><strong>Database:</strong> MySQL 8.4 with 8 interconnected tables</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#666666]">•</span>
-                  <span><strong>Frontend:</strong> Bootstrap 5 for responsive design</span>
+                  <span><strong>Frontend:</strong> Bootstrap 5.3 for responsive design</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#666666]">•</span>
@@ -95,7 +98,15 @@ export default function Article() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#666666]">•</span>
-                  <span><strong>Architecture:</strong> 90+ files, modular structure</span>
+                  <span><strong>Charts:</strong> Chart.js for dashboard visualizations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#666666]">•</span>
+                  <span><strong>Security:</strong> bcrypt hashing, session management, CSRF protection</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#666666]">•</span>
+                  <span><strong>Architecture:</strong> 98 PHP files, modular structure</span>
                 </li>
               </ul>
             </div>
@@ -152,38 +163,42 @@ export default function Article() {
             </h2>
 
             <p className="text-[#000000] leading-relaxed mb-6">
-              Seven tables. Each one connected, each one purposeful:
+              Eight tables. Each one connected, each one purposeful:
             </p>
 
             <div className="bg-[#FFFFFF]/60 backdrop-blur-sm border border-[#D1D1D1]/30 p-8 mb-8">
               <ul className="space-y-3 text-[#000000]">
                 <li className="flex items-start gap-3">
-                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">users</code>
-                  <span>— Who has access, what they can do</span>
+                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">staf</code>
+                  <span>— User accounts, roles, authentication</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">categories</code>
-                  <span>— How we organize the world of things</span>
+                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">jabatan</code>
+                  <span>— Department/unit organization</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">items</code>
-                  <span>— The things themselves, with all their details</span>
+                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">kategori</code>
+                  <span>— Product categorization</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">stock</code>
-                  <span>— Real-time quantities, locations</span>
+                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">barang</code>
+                  <span>— Inventory items with stock levels</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">transactions</code>
-                  <span>— The story of movement—in, out, between</span>
+                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">permohonan</code>
+                  <span>— Stock request headers</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">suppliers</code>
-                  <span>— Who we trust, how to reach them</span>
+                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">permohonan_barang</code>
+                  <span>— Request line items</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">reports</code>
-                  <span>— Generated insights, saved time</span>
+                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">transaksi_stok</code>
+                  <span>— Stock movement audit trail</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <code className="bg-[#D1D1D1]/30 px-2 py-1 rounded text-sm flex-shrink-0">telegram_reminder_log</code>
+                  <span>— Automated notification tracking</span>
                 </li>
               </ul>
             </div>
@@ -215,22 +230,34 @@ export default function Article() {
             {/* Stats Section */}
             <div className="bg-[#535353] text-white p-8 my-12">
               <h3 className="text-2xl font-bold mb-6">By The Numbers</h3>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-4 gap-6">
                 <div>
-                  <p className="text-4xl font-bold mb-2">14,460</p>
+                  <p className="text-4xl font-bold mb-2">
+                    <CountUp to={18000} prefix="~" suffix="+" className="tabular-nums" />
+                  </p>
                   <p className="text-sm text-[#D1D1D1]">Lines of code</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-bold mb-2">90+</p>
-                  <p className="text-sm text-[#D1D1D1]">Files created</p>
+                  <p className="text-4xl font-bold mb-2">
+                    <CountUp to={98} className="tabular-nums" />
+                  </p>
+                  <p className="text-sm text-[#D1D1D1]">PHP files</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-bold mb-2">7</p>
+                  <p className="text-4xl font-bold mb-2">
+                    <CountUp to={8} duration={1} className="tabular-nums" />
+                  </p>
                   <p className="text-sm text-[#D1D1D1]">Database tables</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold mb-2">
+                    <CountUp to={116} className="tabular-nums" />
+                  </p>
+                  <p className="text-sm text-[#D1D1D1]">Git commits</p>
                 </div>
               </div>
               <p className="text-sm text-[#D1D1D1] mt-6 italic">
-                Still in active use. Still serving people. Still asking better questions.
+                4+ months of development. 100% complete. Ready to serve people. Still asking better questions.
               </p>
             </div>
 
@@ -239,7 +266,7 @@ export default function Article() {
             </h2>
 
             <p className="text-[#000000] leading-relaxed mb-6">
-              InventStor is complete. It's being used. It's working. But the question I built it around—<em>How do we serve people better?</em>—that question doesn't end.
+              InventStor is complete. 100% done. Ready for deployment. But the question I built it around—<em>How do we serve people better?</em>—that question doesn't end.
             </p>
 
             <p className="text-[#000000] leading-relaxed mb-6">
@@ -253,27 +280,10 @@ export default function Article() {
             {/* Closing Statement */}
             <div className="mt-16 pt-8 border-t border-[#D1D1D1] text-center">
               <p className="text-[#666666] italic">
-                14,460 lines later, still asking questions. Still listening for answers.
+                ~18,000+ lines later, still asking questions. Still listening for answers.
               </p>
             </div>
 
-          </div>
-
-          {/* Author Bio */}
-          <div className="mt-16 pt-8 border-t border-[#D1D1D1]">
-            <div className="flex items-start gap-6">
-              <div className="w-20 h-20 bg-[#D1D1D1]/30 rounded-full flex-shrink-0"></div>
-              <div>
-                <p className="font-bold text-[#000000] mb-2">Written by Noufah</p>
-                <p className="text-sm text-[#666666] mb-4">
-                  Final semester CS110 student at UiTM Perlis, transitioning to HR Management.
-                  Building technology that remembers we're human.
-                </p>
-                <Link href="/bio" className="text-sm text-[#000000] underline hover:text-[#3A4F5B]">
-                  Read my full story →
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* Related Articles */}
@@ -284,31 +294,31 @@ export default function Article() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Article 1 */}
-              <Link href="/thoughts/from-syntax-to-empathy" className="group">
+              <Link href="/thoughts/why-im-terrified-to-push-to-production" className="group">
                 <article className="bg-white/40 backdrop-blur-sm border border-[#D1D1D1]/20 p-6 hover:bg-white/60 hover:shadow-md transition-all duration-300">
                   <div className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
-                    Personal Journey
+                    Impostor Syndrome
                   </div>
                   <h4 className="text-xl font-bold font-serif text-[#000000] mb-3 group-hover:text-[#3A4F5B] transition-colors">
-                    From Syntax to Empathy: Why I'm Choosing HR
+                    Why I'm Terrified to Push to Production
                   </h4>
                   <p className="text-sm text-[#666666]">
-                    I'm good at code. That's why I'm leaving it. This is the story of how InventStor showed me what I actually love.
+                    The code works. The tests pass. But my finger hovers over the deploy button like it's a self-destruct switch.
                   </p>
                 </article>
               </Link>
 
               {/* Article 2 */}
-              <Link href="/thoughts/accessibility-isnt-optional" className="group">
+              <Link href="/thoughts/when-the-vc-called-me-daughter-of-the-university" className="group">
                 <article className="bg-white/40 backdrop-blur-sm border border-[#D1D1D1]/20 p-6 hover:bg-white/60 hover:shadow-md transition-all duration-300">
                   <div className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
-                    Advocacy
+                    Achievement
                   </div>
                   <h4 className="text-xl font-bold font-serif text-[#000000] mb-3 group-hover:text-[#3A4F5B] transition-colors">
-                    Accessibility Isn't Optional
+                    When the VC Called Me "Daughter of the University"
                   </h4>
                   <p className="text-sm text-[#666666]">
-                    As Mahasiswa OKU, I've experienced firsthand what happens when developers treat accessibility as an afterthought.
+                    On winning pitch competitions, being called "inspirational," and wondering why validation never feels like enough.
                   </p>
                 </article>
               </Link>

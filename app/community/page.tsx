@@ -12,14 +12,13 @@ export default function Community() {
 
           {/* Page Header - Editorial Style */}
           <header className="text-center mb-16">
-            <p className="text-sm text-[#666666] mb-2 tracking-widest">THE COMMUNITY COLUMN</p>
             <h1 className="text-5xl md:text-6xl font-bold font-serif text-[#000000] mb-6">
               Tech Talent Network
             </h1>
-            <div className="w-32 h-[1px] bg-[#D1D1D1] mx-auto mb-8"></div>
-            <p className="text-lg text-[#666666] italic max-w-3xl mx-auto">
+            <p className="text-lg text-[#666666] italic mb-2">
               Bridging talent and opportunity • Building ecosystem, not competition
             </p>
+            <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto mt-8"></div>
           </header>
 
           {/* Introduction - Your Story */}
@@ -34,8 +33,8 @@ export default function Community() {
                 alongside, learned from, and trust. Whether you're a student needing help with a project, a small business
                 looking for tech solutions, or just exploring what's possible—these are the people I recommend.
               </p>
-              <p className="text-[#000000] leading-relaxed italic text-sm">
-                I don't receive commissions or referral fees. This is simply me connecting good people with good work.
+              <p className="text-[#666666] leading-relaxed italic text-sm">
+                *I don't receive commissions or referral fees. This is simply me connecting good people with good work.
               </p>
             </div>
           </section>
@@ -49,18 +48,18 @@ export default function Community() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
               {/* Card 1: Muhammad Hazeeq Haikal */}
-              <div className="bg-[#FFFFFF]/60 backdrop-blur-sm border border-[#D1D1D1]/30 p-6 rounded-lg hover:shadow-lg transition-all duration-300">
+              <div className="bg-[#FFFFFF]/60 backdrop-blur-sm border border-[#D1D1D1]/30 p-6 rounded-lg transition-all duration-300 hover:-translate-y-3 hover:rotate-1 hover:scale-105 hover:shadow-2xl">
                 <h3 className="text-xl font-bold font-serif text-[#000000] mb-2">
                   Muhammad Hazeeq Haikal
                 </h3>
                 <p className="text-sm text-[#666666] mb-4 italic">
-                  Full-Stack Developer (Web • Mobile • IoT)
+                  Multi-Platform Developer (Web • Mobile • IoT)
                 </p>
 
                 <div className="border-t border-[#D1D1D1] pt-4 mb-4">
                   <p className="text-xs text-[#666666] mb-2 font-semibold">KEY TECHNOLOGIES</p>
                   <p className="text-sm text-[#000000]">
-                    PHP, React, Flutter, MySQL, Arduino/ESP32
+                    Laravel, React, Flutter, MySQL, Arduino/ESP32, Node.js
                   </p>
                 </div>
 
@@ -76,32 +75,35 @@ export default function Community() {
                 <div className="mb-4">
                   <p className="text-xs text-[#666666] mb-2 font-semibold">CURRENTLY</p>
                   <p className="text-sm text-[#000000]">
-                    Freelance developer | 300+ completed projects | UiTM Information Systems
+                    Freelance developer | UiTM Business Computing Student 
                   </p>
                 </div>
 
-                <div className="border-t border-[#D1D1D1] pt-4 flex gap-3">
+                <div className="border-t border-[#D1D1D1] pt-4 flex justify-center gap-4">
                   <a
                     href="https://hazeeq.org"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-[#000000] underline hover:text-[#3A4F5B] transition-colors"
                   >
-                    Portfolio →
+                    Portfolio
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/muhammad-hazeeq-haikal"
+                    href="https://www.linkedin.com/in/muhammad-hazeeq-haikal-149449246"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-[#000000] underline hover:text-[#3A4F5B] transition-colors"
+                    className="text-[#000000] hover:text-[#3A4F5B] transition-colors"
+                    title="Connect on LinkedIn"
                   >
-                    LinkedIn →
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
                   </a>
                 </div>
               </div>
 
               {/* Card 2: Muhammad Haikal Iman */}
-              <div className="bg-[#FFFFFF]/60 backdrop-blur-sm border border-[#D1D1D1]/30 p-6 rounded-lg hover:shadow-lg transition-all duration-300">
+              <div className="bg-[#FFFFFF]/60 backdrop-blur-sm border border-[#D1D1D1]/30 p-6 rounded-lg transition-all duration-300 hover:-translate-y-3 hover:-rotate-1 hover:scale-105 hover:shadow-2xl">
                 <h3 className="text-xl font-bold font-serif text-[#000000] mb-2">
                   Muhammad Haikal Iman
                 </h3>
@@ -112,7 +114,7 @@ export default function Community() {
                 <div className="border-t border-[#D1D1D1] pt-4 mb-4">
                   <p className="text-xs text-[#666666] mb-2 font-semibold">KEY TECHNOLOGIES</p>
                   <p className="text-sm text-[#000000]">
-                    Laravel, React, Next.js, Node.js, MongoDB
+                    Laravel, Next.js, Tailwind.css, PostgreSQL, Prisma ORM
                   </p>
                 </div>
 
@@ -128,32 +130,35 @@ export default function Community() {
                 <div className="mb-4">
                   <p className="text-xs text-[#666666] mb-2 font-semibold">CURRENTLY</p>
                   <p className="text-sm text-[#000000]">
-                    Freelance developer | UiTM Shah Alam Netcentric Computing
+                    Freelance developer | UiTM Netcentric Computing Student
                   </p>
                 </div>
 
-                <div className="border-t border-[#D1D1D1] pt-4 flex gap-3">
+                <div className="border-t border-[#D1D1D1] pt-4 flex justify-center gap-4">
                   <a
                     href="https://mhdhaikalll.github.io/portfolio"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-[#000000] underline hover:text-[#3A4F5B] transition-colors"
                   >
-                    Portfolio →
+                    Portfolio
                   </a>
                   <a
                     href="https://www.linkedin.com/in/mhdhaikaliman"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-[#000000] underline hover:text-[#3A4F5B] transition-colors"
+                    className="text-[#000000] hover:text-[#3A4F5B] transition-colors"
+                    title="Connect on LinkedIn"
                   >
-                    LinkedIn →
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
                   </a>
                 </div>
               </div>
 
               {/* Card 3: Muaz Hazali */}
-              <div className="bg-[#FFFFFF]/60 backdrop-blur-sm border border-[#D1D1D1]/30 p-6 rounded-lg hover:shadow-lg transition-all duration-300">
+              <div className="bg-[#FFFFFF]/60 backdrop-blur-sm border border-[#D1D1D1]/30 p-6 rounded-lg transition-all duration-300 hover:-translate-y-3 hover:rotate-2 hover:scale-105 hover:shadow-2xl">
                 <h3 className="text-xl font-bold font-serif text-[#000000] mb-2">
                   Muaz Hazali
                 </h3>
@@ -180,18 +185,21 @@ export default function Community() {
                 <div className="mb-4">
                   <p className="text-xs text-[#666666] mb-2 font-semibold">CURRENTLY</p>
                   <p className="text-sm text-[#000000]">
-                    Data Scientist | Building LepakMasjid.app & PasarMalam.app | UiTM
+                    Data Scientist | UiTM Information Technology Graduate
                   </p>
                 </div>
 
-                <div className="border-t border-[#D1D1D1] pt-4 flex gap-3">
+                <div className="border-t border-[#D1D1D1] pt-4 flex justify-center">
                   <a
                     href="https://www.linkedin.com/in/muazhazali"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-[#000000] underline hover:text-[#3A4F5B] transition-colors"
+                    className="text-[#000000] hover:text-[#3A4F5B] transition-colors"
+                    title="Connect on LinkedIn"
                   >
-                    LinkedIn →
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
                   </a>
                 </div>
               </div>
@@ -213,16 +221,13 @@ export default function Community() {
                 href="/contact"
                 className="inline-block px-8 py-3 bg-white text-[#000000] font-medium hover:bg-[#D1D1D1] transition-all duration-300"
               >
-                Get in Touch →
+                Get in Touch
               </a>
             </div>
           </section>
 
           {/* Footer Note */}
           <div className="text-center mt-16 pt-8 border-t border-[#D1D1D1]">
-            <p className="text-sm text-[#666666] italic">
-              This directory is maintained as a community service. I don't receive commissions or referral fees.
-            </p>
             <p className="text-sm text-[#666666] mt-6 font-serif">
               inkfangs • 2025
             </p>

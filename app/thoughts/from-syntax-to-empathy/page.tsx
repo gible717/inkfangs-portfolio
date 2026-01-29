@@ -11,7 +11,7 @@ export default function Article() {
         <article className="max-w-4xl mx-auto">
 
           {/* Article Header */}
-          <header className="mb-12 pb-8 border-b border-[#D1D1D1]">
+          <header className="mb-12 pb-8">
             <div className="text-xs text-[#666666] mb-4 uppercase tracking-widest">
               Personal Journey
             </div>
@@ -25,6 +25,8 @@ export default function Article() {
               <span>•</span>
               <span>by inkfangs</span>
             </div>
+            {/* Border line - longer than text but not full width */}
+            <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto"></div>
           </header>
 
           {/* Article Content */}
@@ -36,7 +38,7 @@ export default function Article() {
             </p>
 
             <p className="text-[#000000] leading-relaxed mb-6">
-              That sentence confuses people. Recruiters, professors, even my family. "But you won a gold medal in India at 14. You built a government system that's still being used. You understand databases, logic, architecture. Why would you walk away?"
+              That sentence confuses people. Recruiters, professors, even my family. "But you won a gold medal in India at 14. You built a government system that's 100% complete. You understand databases, logic, architecture. Why would you walk away?"
             </p>
 
             <p className="text-[#000000] leading-relaxed mb-8">
@@ -262,23 +264,6 @@ export default function Article() {
 
           </div>
 
-          {/* Author Bio */}
-          <div className="mt-16 pt-8 border-t border-[#D1D1D1]">
-            <div className="flex items-start gap-6">
-              <div className="w-20 h-20 bg-[#D1D1D1]/30 rounded-full flex-shrink-0"></div>
-              <div>
-                <p className="font-bold text-[#000000] mb-2">Written by Noufah</p>
-                <p className="text-sm text-[#666666] mb-4">
-                  Final semester CS110 student at UiTM Perlis, transitioning to HR Management.
-                  Building technology that remembers we're human.
-                </p>
-                <Link href="/bio" className="text-sm text-[#000000] underline hover:text-[#3A4F5B]">
-                  Read my full story →
-                </Link>
-              </div>
-            </div>
-          </div>
-
           {/* Related Articles */}
           <div className="mt-16 pt-8 border-t border-[#D1D1D1]">
             <h3 className="text-2xl font-bold font-serif text-[#000000] mb-8">
@@ -293,7 +278,7 @@ export default function Article() {
                     Technical Deep Dive
                   </div>
                   <h4 className="text-xl font-bold font-serif text-[#000000] mb-3 group-hover:text-[#3A4F5B] transition-colors">
-                    14,460 Lines to Ask One Question
+                    ~18,000+ Lines to Ask One Question
                   </h4>
                   <p className="text-sm text-[#666666]">
                     InventStor wasn't just about inventory management. It was about asking: How do we serve people better?

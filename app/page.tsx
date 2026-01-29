@@ -1,11 +1,18 @@
 "use client";
+import { useState } from "react";
 import Header from "./components/Header";
-import Lanyard3D from "./components/Lanyard3D";
+import ProfileCard from "./components/ProfileCard";
 import TypingQuotes from "./components/TypingQuotes";
 import GuestbookSimple from "./components/GuestbookSimple";
-import ViewSource from "./components/ViewSource";
+import BlurText from "./components/BlurText";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const [showSubtitle1, setShowSubtitle1] = useState(false);
+  const [showSubtitle2, setShowSubtitle2] = useState(false);
+  const [showTyping, setShowTyping] = useState(false);
+  const [showScroll, setShowScroll] = useState(false);
+
   return (
     <>
       <Header />
@@ -20,32 +27,109 @@ export default function Home() {
       <div>
         {/* Main Headline */}
         <div className="mb-8">
-          <h2 className="text-6xl md:text-8xl font-bold text-[#000000] leading-tight animate-fadeInUp">
-            <span className="font-[family-name:var(--font-space-mono)]">code</span>
-            <span className="font-serif"> '25</span>
+          <h2 className="text-6xl md:text-8xl font-bold text-[#000000] leading-tight">
+            <span className="font-[family-name:var(--font-space-mono)]">
+              <BlurText
+                text="code"
+                animateBy="letters"
+                delay={120}
+                stepDuration={0.7}
+                direction="top"
+                blur="12px"
+              />
+            </span>
+            <span className="font-serif">
+              <BlurText
+                text=" '25"
+                animateBy="letters"
+                delay={120}
+                stepDuration={0.7}
+                direction="top"
+                blur="12px"
+                startDelay={0.6}
+              />
+            </span>
           </h2>
-          <h2 className="text-6xl md:text-8xl font-bold text-[#000000] leading-tight font-serif animate-fadeInScale delay-300">
-            on blank page
+          <h2 className="text-6xl md:text-8xl font-bold text-[#000000] leading-tight font-serif">
+            <BlurText
+              text="on blank page"
+              animateBy="words"
+              delay={200}
+              stepDuration={0.8}
+              direction="bottom"
+              blur="14px"
+              startDelay={1.4}
+              onAnimationComplete={() => {
+                // Step 4: Show "a showcase by noufah"
+                setShowSubtitle1(true);
+              }}
+            />
           </h2>
         </div>
 
-        {/* Subtitle */}
-        <p className="text-lg text-[#666666] mb-8 italic animate-fadeIn delay-600">
-          a showcase by noufah • building questions, not just systems
+        {/* Subtitle - same line with bullet separator */}
+        <p className="text-lg text-[#666666] mb-8 italic">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={showSubtitle1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            onAnimationComplete={() => {
+              if (showSubtitle1) {
+                // Step 5: Show "building questions..."
+                setTimeout(() => setShowSubtitle2(true), 200);
+              }
+            }}
+            className="inline-block"
+          >
+            a showcase by noufah
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={showSubtitle2 ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="inline-block mx-2"
+          >
+            •
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={showSubtitle2 ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            onAnimationComplete={() => {
+              if (showSubtitle2) {
+                // Step 6: Start typing quotes
+                setTimeout(() => setShowTyping(true), 300);
+              }
+            }}
+            className="inline-block"
+          >
+            building questions, not just systems
+          </motion.span>
         </p>
 
-        {/* Typing Quote */}
-        <TypingQuotes />
+        {/* Typing Quote - waits for subtitle animation */}
+        <TypingQuotes
+          waitForTrigger
+          shouldStart={showTyping}
+          onFirstCharTyped={() => {
+            // Step 7: Show scroll indicator after typing starts
+            setTimeout(() => setShowScroll(true), 500);
+          }}
+        />
 
-        {/* Scroll Indicator */}
-        <button
+        {/* Scroll Indicator - appears last */}
+        <motion.button
           onClick={() => {
             document.getElementById('thoughts')?.scrollIntoView({
               behavior: 'smooth',
               block: 'start'
             });
           }}
-          className="inline-flex items-center gap-2 text-sm text-[#666666] opacity-30 hover:opacity-100 transition-all duration-300 cursor-pointer group"
+          className="inline-flex items-center gap-2 text-sm text-[#666666] hover:opacity-100 transition-all duration-300 cursor-pointer group"
+          initial={{ opacity: 0 }}
+          animate={showScroll ? { opacity: 0.3 } : { opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <span>scroll down</span>
           <svg
@@ -56,25 +140,33 @@ export default function Home() {
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
-        </button>
+        </motion.button>
       </div>
 
-      {/* RIGHT: Empty column for lanyard positioning */}
-      <div className="relative">
-        {/* View Source - centered under lanyard */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 hidden md:block">
-          <ViewSource
-            file="app/components/Lanyard3D.tsx"
-            text="view source"
-          />
-        </div>
+      {/* RIGHT: ProfileCard */}
+      <div className="relative flex items-center justify-center">
+        <ProfileCard
+          name="Noufah"
+          title="Tech Meets Humanity"
+          handle="inkfangs"
+          status="CS Student • UiTM Perlis"
+          contactText="Say Hello"
+          avatarUrl="/assets/noufah-avatar.png"
+          iconUrl="/assets/code-pattern.svg"
+          showUserInfo={true}
+          enableTilt={true}
+          onContactClick={() => {
+            document.getElementById('contact')?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }}
+          behindGlowEnabled={true}
+          behindGlowColor="rgba(58, 79, 91, 0.6)"
+          innerGradient="linear-gradient(145deg, #1a1a1a 0%, #3A4F5B44 100%)"
+        />
       </div>
     </div>
-  </div>
-
-  {/* 3D Lanyard - Only visible in landing section */}
-  <div className="hidden md:block">
-    <Lanyard3D />
   </div>
 </section>
 
@@ -90,8 +182,8 @@ export default function Home() {
             <p className="text-sm text-[#666666] italic mb-6">
               where code meets conscience thoughts written in functions, feelings rendered in pixels
             </p>
-            {/* Full-width border line */}
-            <div className="w-full h-[1px] bg-[#D1D1D1]"></div>
+            {/* Border line - longer than text but not full width */}
+            <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto"></div>
           </header>
 
           {/* Two Column Layout: Article + Sidebar */}
@@ -181,8 +273,8 @@ export default function Home() {
             <p className="text-sm text-[#666666] italic mb-6">
               code confessions • technical diary entries
             </p>
-            {/* Shortened border line */}
-            <div className="w-1/2 h-[1px] bg-[#D1D1D1] mx-auto"></div>
+            {/* Border line - longer than text but not full width */}
+            <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto"></div>
           </header>
 
           {/* Featured Project Card - InventStor */}
@@ -196,7 +288,7 @@ export default function Home() {
 
               {/* Question-based Tagline */}
               <blockquote className="text-2xl text-[#000000] leading-relaxed mb-8 text-center italic">
-                "14,460 lines to ask one question: How do we serve people better?"
+                "~18,000+ lines to ask one question: How do we serve people better?"
               </blockquote>
 
               {/* Project Description */}
@@ -215,7 +307,7 @@ export default function Home() {
                   PHP • MySQL • Bootstrap • JavaScript
                 </p>
                 <p className="text-sm text-[#666666] mt-2">
-                  90+ files • 7-table database • Real-time tracking • In active use
+                  98 PHP files • 8-table database • 116 commits • 100% complete
                 </p>
               </div>
 

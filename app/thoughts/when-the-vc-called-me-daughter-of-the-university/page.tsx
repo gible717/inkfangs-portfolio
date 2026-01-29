@@ -11,7 +11,7 @@ export default function Article() {
         <article className="max-w-4xl mx-auto">
 
           {/* Article Header */}
-          <header className="mb-12 pb-8 border-b border-[#D1D1D1]">
+          <header className="mb-12 pb-8">
             <div className="text-xs text-[#666666] mb-4 uppercase tracking-widest">
               Advocacy • Leadership
             </div>
@@ -25,6 +25,8 @@ export default function Article() {
               <span>•</span>
               <span>by inkfangs</span>
             </div>
+            {/* Border line - longer than text but not full width */}
+            <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto"></div>
           </header>
 
           {/* Article Content */}
@@ -356,24 +358,6 @@ export default function Article() {
 
           </div>
 
-          {/* Author Bio */}
-          <div className="mt-16 pt-8 border-t border-[#D1D1D1]">
-            <div className="flex items-start gap-6">
-              <div className="w-20 h-20 bg-[#D1D1D1]/30 rounded-full flex-shrink-0"></div>
-              <div>
-                <p className="font-bold text-[#000000] mb-2">Written by Noufah</p>
-                <p className="text-sm text-[#666666] mb-4">
-                  Final semester CS110 student at UiTM Perlis, transitioning to HR Management.
-                  Mahasiswa OKU, disability advocate, and Top 3 Anugerah Khas Mahasiswa OKU Harapan 2024 recipient.
-                  Building policies and workplaces where diversity is strength.
-                </p>
-                <Link href="/bio" className="text-sm text-[#000000] underline hover:text-[#3A4F5B]">
-                  Read my full story →
-                </Link>
-              </div>
-            </div>
-          </div>
-
           {/* Related Articles */}
           <div className="mt-16 pt-8 border-t border-[#D1D1D1]">
             <h3 className="text-2xl font-bold font-serif text-[#000000] mb-8">
@@ -382,31 +366,31 @@ export default function Article() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Article 1 */}
-              <Link href="/thoughts/accessibility-isnt-optional" className="group">
+              <Link href="/thoughts/i-hope-this-doesnt-happen-to-you" className="group">
                 <article className="bg-white/40 backdrop-blur-sm border border-[#D1D1D1]/20 p-6 hover:bg-white/60 hover:shadow-md transition-all duration-300">
                   <div className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
-                    Advocacy
+                    Vulnerability
                   </div>
                   <h4 className="text-xl font-bold font-serif text-[#000000] mb-3 group-hover:text-[#3A4F5B] transition-colors">
-                    Accessibility Isn't Optional
+                    I Hope This Doesn't Happen to You
                   </h4>
                   <p className="text-sm text-[#666666]">
-                    As Mahasiswa OKU, I've experienced firsthand what happens when developers treat accessibility as an afterthought.
+                    There's a vulnerability in writing code that people don't talk about. Every function you write is a confession.
                   </p>
                 </article>
               </Link>
 
               {/* Article 2 */}
-              <Link href="/thoughts/from-syntax-to-empathy" className="group">
+              <Link href="/thoughts/listening-to-hindia-feels-like-code-that-never-compiled" className="group">
                 <article className="bg-white/40 backdrop-blur-sm border border-[#D1D1D1]/20 p-6 hover:bg-white/60 hover:shadow-md transition-all duration-300">
                   <div className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
-                    Personal Journey
+                    Music • Code
                   </div>
                   <h4 className="text-xl font-bold font-serif text-[#000000] mb-3 group-hover:text-[#3A4F5B] transition-colors">
-                    From Syntax to Empathy: Why I'm Choosing HR
+                    Listening to Hindia Feels Like Code That Never Compiled
                   </h4>
                   <p className="text-sm text-[#666666]">
-                    I'm good at code. That's why I'm leaving it. This is the story of how I discovered what I actually love.
+                    On Baskara Putra's music, technical metaphors, and the quiet exhaustion of trying to belong.
                   </p>
                 </article>
               </Link>

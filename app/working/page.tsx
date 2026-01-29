@@ -1,6 +1,7 @@
 "use client";
 import Header from "../components/Header";
 import Link from "next/link";
+import CountUp from "../components/CountUp";
 
 export default function Working() {
   return (
@@ -18,10 +19,7 @@ export default function Working() {
             <p className="text-lg text-[#666666] italic mb-2">
               A chronicle of building & leading
             </p>
-            <p className="text-sm text-[#666666]">
-              From gold medals to government systems to human resources
-            </p>
-            <div className="w-32 h-[1px] bg-[#D1D1D1] mx-auto mt-8"></div>
+            <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto mt-8"></div>
           </header>
 
           {/* Two Column Layout: Timeline Left, Currently Right */}
@@ -132,11 +130,11 @@ export default function Working() {
                       InventStor Developer (Internship)
                     </h3>
                     <p className="text-[#000000] mb-3">
-                      Built a comprehensive government inventory management system from the ground up. 14,460 lines of code. 90+ files. 7-table database. Still in active use.
+                      Built a comprehensive government inventory management system from the ground up. ~18,000+ lines of code. 98 PHP files. 8-table interconnected database. 116 commits over 4+ months. 100% complete, ready for deployment.
                     </p>
                     <div className="bg-[#FFFFFF]/60 backdrop-blur-sm border border-[#D1D1D1]/30 p-4 mb-3">
                       <p className="text-sm text-[#000000] mb-2"><strong>Tech Stack:</strong></p>
-                      <p className="text-sm text-[#666666]">PHP • MySQL • Bootstrap • JavaScript</p>
+                      <p className="text-sm text-[#666666]">PHP 8.3 • MySQL 8.4 • Bootstrap 5.3 • Vanilla JS • Chart.js</p>
                     </div>
                     <div className="text-sm text-[#666666]">
                       <span className="font-medium">Key insight:</span> I don't love code for code's sake. I love code because of what it can do for people.
@@ -337,7 +335,9 @@ export default function Working() {
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-3xl font-bold text-[#000000]">14,460</p>
+                    <p className="text-3xl font-bold text-[#000000]">
+                      <CountUp to={18000} prefix="~" suffix="+" className="tabular-nums" />
+                    </p>
                     <p className="text-xs text-[#666666]">Lines of code in InventStor</p>
                   </div>
                   <div>
@@ -345,11 +345,15 @@ export default function Working() {
                     <p className="text-xs text-[#666666]">Out of 700-1,750 OKU students</p>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#000000]">2+</p>
+                    <p className="text-3xl font-bold text-[#000000]">
+                      <CountUp to={2} duration={1} suffix="+" className="tabular-nums" />
+                    </p>
                     <p className="text-xs text-[#666666]">Leadership positions held</p>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#000000]">7</p>
+                    <p className="text-3xl font-bold text-[#000000]">
+                      <CountUp to={7} duration={1.5} className="tabular-nums" />
+                    </p>
                     <p className="text-xs text-[#666666]">Years from GITC gold to HR pivot</p>
                   </div>
                 </div>
@@ -368,7 +372,7 @@ export default function Working() {
               <p className="text-[#666666] italic">
                 Not just technologies—ways of thinking, leading, and building.
               </p>
-              <div className="w-32 h-[1px] bg-[#D1D1D1] mx-auto mt-6"></div>
+              <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto mt-6"></div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -461,7 +465,7 @@ export default function Working() {
               <h2 className="text-4xl md:text-5xl font-bold font-serif text-[#000000] mb-4">
                 Recognition & Achievements
               </h2>
-              <div className="w-32 h-[1px] bg-[#D1D1D1] mx-auto mt-6"></div>
+              <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto mt-6"></div>
             </div>
 
             <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
@@ -518,7 +522,7 @@ export default function Working() {
                 Download CV (PDF)
               </button>
               <a
-                href="https://www.linkedin.com/in/noufah-abdullah"
+                href="https://www.linkedin.com/in/noufahabdullah"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-[#D1D1D1]/40 text-[#666666] font-medium hover:bg-[#3A4F5B] hover:text-white transition-all duration-300"

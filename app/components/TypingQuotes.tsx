@@ -1,7 +1,44 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
-export default function TypingQuotes() {
+interface TypingQuotesProps {
+  waitForTrigger?: boolean;
+  shouldStart?: boolean;
+  onFirstCharTyped?: () => void;
+}
+
+export default function TypingQuotes({
+  waitForTrigger = false,
+  shouldStart = false,
+  onFirstCharTyped
+}: TypingQuotesProps) {
+  const [canStart, setCanStart] = useState(!waitForTrigger);
+  const [hasCalledCallback, setHasCalledCallback] = useState(false);
+
+  // Listen for prop-based trigger
+  useEffect(() => {
+    if (waitForTrigger && shouldStart) {
+      setCanStart(true);
+      // Call the callback when typing starts
+      if (onFirstCharTyped && !hasCalledCallback) {
+        setTimeout(() => {
+          onFirstCharTyped();
+          setHasCalledCallback(true);
+        }, 100);
+      }
+    }
+  }, [waitForTrigger, shouldStart, onFirstCharTyped, hasCalledCallback]);
+
+  if (!canStart) {
+    // Show empty placeholder to maintain layout
+    return (
+      <blockquote className="text-xl text-[#666666] leading-relaxed mb-12 max-w-3xl min-h-[120px] font-bold italic">
+        <span className="opacity-0">|</span>
+      </blockquote>
+    );
+  }
+
   return (
     <blockquote className="text-xl text-[#666666] leading-relaxed mb-12 max-w-3xl min-h-[120px] font-bold italic">
       <TypeAnimation

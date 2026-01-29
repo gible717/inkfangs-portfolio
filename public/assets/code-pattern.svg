@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <style>
+      .code-symbol {
+        fill: white;
+        font-family: 'Courier New', monospace;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    </style>
+  </defs>
+  <!-- Row 1 -->
+  <text x="10" y="30" class="code-symbol">&lt;/&gt;</text>
+  <text x="70" y="30" class="code-symbol">&lt;/&gt;</text>
+  <!-- Row 2 (offset) -->
+  <text x="40" y="70" class="code-symbol">&lt;/&gt;</text>
+  <text x="100" y="70" class="code-symbol">&lt;/&gt;</text>
+  <!-- Row 3 -->
+  <text x="10" y="110" class="code-symbol">&lt;/&gt;</text>
+  <text x="70" y="110" class="code-symbol">&lt;/&gt;</text>
+</svg>

@@ -1,34 +1,91 @@
 "use client";
-import Header from "../../components/Header";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Article() {
+  const [isAlternateVersion, setIsAlternateVersion] = useState(false);
+
   return (
     <>
-      <Header />
+      {/* Custom Header with Dark Mode Support */}
+      <header className={`fixed top-0 left-0 right-0 py-6 px-4 z-50 border-b transition-colors duration-700 ${isAlternateVersion ? 'bg-[#1A1A1A] border-[#333333]/30' : 'bg-[#F5F5F5] border-[#D1D1D1]/30'}`}>
+        <nav className="flex items-center w-full relative">
+          <a href="/" className={`text-2xl font-bold font-serif transition-colors duration-700 ${isAlternateVersion ? 'text-[#FFFFFF]' : 'text-[#000000]'}`}>
+            inkfangs
+          </a>
+          <ul className="flex gap-8 text-sm absolute left-1/2 transform -translate-x-1/2">
+            <li>
+              <a href="/" className={`nav-link transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999] hover:text-[#FFFFFF]' : ''}`}>
+                index
+              </a>
+            </li>
+            <li>
+              <a href="/bio" className={`nav-link transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999] hover:text-[#FFFFFF]' : ''}`}>
+                bio
+              </a>
+            </li>
+            <li>
+              <a href="/builds" className={`nav-link transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999] hover:text-[#FFFFFF]' : ''}`}>
+                builds
+              </a>
+            </li>
+            <li>
+              <a href="/thoughts" className={`nav-link active transition-colors duration-700 ${isAlternateVersion ? 'text-[#FFFFFF]' : ''}`}>
+                thoughts
+              </a>
+            </li>
+            <li>
+              <a href="/working" className={`nav-link transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999] hover:text-[#FFFFFF]' : ''}`}>
+                worklog
+              </a>
+            </li>
+            <li>
+              <a href="/community" className={`nav-link transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999] hover:text-[#FFFFFF]' : ''}`}>
+                community
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className={`nav-link transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999] hover:text-[#FFFFFF]' : ''}`}>
+                contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-      <main className="min-h-screen bg-[#F5F5F5] pt-32 pb-24 px-6">
+      <main className={`min-h-screen pt-32 pb-24 px-6 transition-colors duration-700 ${isAlternateVersion ? 'bg-[#1A1A1A]' : 'bg-[#F5F5F5]'}`}>
         <article className="max-w-4xl mx-auto">
 
           {/* Article Header */}
-          <header className="mb-12 pb-8 border-b border-[#D1D1D1]">
-            <div className="text-xs text-[#666666] mb-4 uppercase tracking-widest">
-              Vulnerability
+          <header className="mb-12 pb-8">
+            <div className={`text-xs mb-4 uppercase tracking-widest transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999]' : 'text-[#666666]'}`}>
+              {isAlternateVersion ? 'Alternate Universe' : 'Vulnerability'}
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold font-serif text-[#000000] mb-6 leading-tight">
+            <h1 className={`text-5xl md:text-6xl font-bold font-serif mb-6 leading-tight transition-colors duration-700 ${isAlternateVersion ? 'text-[#FFFFFF]' : 'text-[#000000]'}`}>
               I Hope This Doesn't Happen to You
             </h1>
-            <div className="flex gap-4 text-sm text-[#666666] mb-6">
+            <div className={`flex gap-4 text-sm mb-6 transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999]' : 'text-[#666666]'}`}>
               <span>February 10, 2025</span>
               <span>•</span>
               <span>5 min read</span>
               <span>•</span>
               <span>by inkfangs</span>
+              {/* Easter Egg Toggle - Hidden in plain sight */}
+              <button
+                onClick={() => setIsAlternateVersion(!isAlternateVersion)}
+                className={`transition-all duration-300 ${isAlternateVersion ? 'text-[#666666] hover:text-[#FFFFFF]' : 'text-[#999999] hover:text-[#000000]'}`}
+                title={isAlternateVersion ? 'Return to original' : 'View alternate universe'}
+              >
+                {isAlternateVersion ? '← return' : '✦'}
+              </button>
             </div>
+            {/* Border line - longer than text but not full width */}
+            <div className={`w-5/6 h-[1px] mx-auto transition-colors duration-700 ${isAlternateVersion ? 'bg-[#333333]' : 'bg-[#D1D1D1]'}`}></div>
           </header>
 
           {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
+          {!isAlternateVersion ? (
+            <div className="prose prose-lg max-w-none">
 
             {/* Opening */}
             <p className="text-xl text-[#000000] leading-relaxed mb-8">
@@ -136,65 +193,114 @@ export default function Article() {
               It means you care enough to get it wrong. And caring enough to get it wrong is the first step to getting it right.
             </p>
 
-            {/* Closing Statement */}
-            <div className="mt-16 pt-8 border-t border-[#D1D1D1] text-center">
-              <p className="text-[#666666] italic">
-                Still learning. Still debugging. Still building.
-              </p>
-            </div>
-
-          </div>
-
-          {/* Author Bio */}
-          <div className="mt-16 pt-8 border-t border-[#D1D1D1]">
-            <div className="flex items-start gap-6">
-              <div className="w-20 h-20 bg-[#D1D1D1]/30 rounded-full flex-shrink-0"></div>
-              <div>
-                <p className="font-bold text-[#000000] mb-2">Written by Noufah</p>
-                <p className="text-sm text-[#666666] mb-4">
-                  Final semester CS110 student at UiTM Perlis, transitioning to HR Management.
-                  Building technology that remembers we're human.
+              {/* Closing Statement */}
+                <p className="text-center text-[#666666] italic">
+                  Still learning. Still debugging. Still building.
                 </p>
-                <Link href="/bio" className="text-sm text-[#000000] underline hover:text-[#3A4F5B]">
-                  Read my full story →
-                </Link>
               </div>
+          ) : (
+            <div className="prose prose-lg max-w-none">
+
+              {/* Alternate Version - Indonesian */}
+              <p className="text-[#E0E0E0] leading-relaxed mb-8">
+                Dulu gue nulis kode buat seseorang yang gak pernah baca. Bukan karena dia sibuk. Tapi karena dia emang gak peduli kalau gue nulis. Dia sibuk sama kode orang lain, ketawa sama developer lain, bangun sistem sama tim yang gak ada tempat gue. Gue? Tetep aja di situ. Nunggu dia liat commit gue. Berharap dia notice Pull Request gue. Tapi compiler gak bohong: 
+              </p>
+
+              <div className="my-8 space-y-2">
+                <code className="bg-[#333333]/50 px-2 py-1 rounded text-sm text-[#FF6B6B]">Fatal: Cannot build relationship - missing dependencies</code>.
+              </div>
+
+              <p className="text-[#E0E0E0] leading-relaxed mb-8">
+                ~18,000+ baris kemudian, gue belajar sesuatu, lo gak bisa <code className="bg-[#333333]/50 px-2 py-1 rounded text-sm">git push</code> perasaan ke orang yang gak punya repository buat nyimpan. Gak bisa merge sama orang yang terus reject Pull Request lo. Gak bisa debug hubungan di mana cuma lo doang yang ngeliat ada bug.
+              </p>
+
+              {/* Pull Quote - Dark Version */}
+              <blockquote className="my-12 py-8 border-l-4 border-[#FFFFFF] pl-8 bg-[#2A2A2A]/60 backdrop-blur-sm">
+                <p className="text-2xl md:text-3xl font-serif italic text-[#FFFFFF] leading-relaxed">
+                  "Lo gak bisa git push perasaan ke orang yang gak punya repository buat nyimpan."
+                </p>
+              </blockquote>
+
+              <p className="text-[#E0E0E0] leading-relaxed mb-8">
+                Jadi gue berhenti nulis buat dia. Gak dengan marah. Gak dengan dendam. Cuma... capek aja.
+              </p>
+
+              <div className="my-8 space-y-2">
+                <p className="text-3xl font-bold text-[#FFFFFF]">Capek jelasin,</p>
+                <p className="text-3xl font-bold text-[#FFFFFF]">Capek pembenaran,</p>
+                <p className="text-3xl font-bold text-[#FFFFFF]">Capek nunggu orang yang emang gak bakal dateng.</p>
+              </div>
+
+              <p className="text-[#E0E0E0] leading-relaxed mb-8">
+                Sekarang gue nulis kode buat sistem yang melayani orang—orang yang gak bakal gue tinggalin kalau mereka butuh bantuan, orang yang gak bakal gue ignore kalau mereka raise issue, orang yang layak di-deploy dengan bermartabat.
+              </p>
+
+              <p className="text-[#E0E0E0] leading-relaxed mb-8">
+                Ini bukan revenge arc. Cuma arc yang baru. Arc di mana main character bukan lagi "kita" tapi "gue". Dan gue bangga sama character development ini. Makasih udah ngajarin gue apa itu <code className="bg-[#FF6B6B]/50 px-2 py-1 rounded text-sm">git blame</code>. Makasih udah ngajarin tentang breaking changes. Makasih udah ngajarin apa itu deprecated function, yang masih bisa jalan tapi udah gak relevan lagi, yang masih ada di codebase tapi udah gak dipanggil lagi, kayak perasaan lo sama gue.
+              </p>
+
+              <p className="text-[#E0E0E0] leading-relaxed mb-8">
+                Gue gak maafin lo karena gue udah move on. Gue maafin lo karena gue capek bawa technical debt dari hubungan yang udah deprecated. 
+              </p>
+
+              <div className="my-8 space-y-2">
+                <p className="text-m text-[#FFFFFF]">Lo tetep di CS, gue pindah HR.</p>
+                <p className="text-m text-[#FFFFFF]">Lo sama temen-temen lo, gue sama visi baru gue.</p>
+                <p className="text-m text-[#FFFFFF]">Lo build aplikasi, gue build ruang aman buat orang yang terluka. Dan itu gak apa-apa.</p>
+                <p className="text-m text-bold text-[#FFFFFF]">Dan itu gak apa-apa.</p>
+              </div>
+
+              <p className="text-[#E0E0E0] leading-relaxed mb-8">
+                Karena gue belajar dari hubungan yang gagal, bahwa sistem yang paling canggih sekalipun tetep butuh empati buat berfungsi. Bahwa <code className="bg-[#333333]/50 px-2 py-1 rounded text-sm">if-else</code> bisa handle logika tapi gak bisa handle perasaan orang yang lo tinggal di group chat. Bahwa <code className="bg-[#333333]/50 px-2 py-1 rounded text-sm">while loop</code> bisa bikin program jalan terus tapi gak bisa bikin orang mau stay kalau mereka gak dihargai.
+              </p>
+
+              {/* Pull Quote - Dark Version */}
+              <blockquote className="my-12 py-8 border-l-4 border-[#FFFFFF] pl-8 bg-[#2A2A2A]/60 backdrop-blur-sm">
+                <p className="text-2xl md:text-3xl font-serif italic text-[#FFFFFF] leading-relaxed">
+                  "Sistem yang paling canggih sekalipun tetep butuh empati buat berfungsi."
+                </p>
+              </blockquote>
+
+              <p className="text-[#E0E0E0] leading-relaxed mb-8">
+                Jadi selamat jalan. Semoga lo nemuin team yang cocok sama coding style lo. Gue? Gue udah deploy version baru, version di mana lead developer gue sendiri, tech stack yang gue pilih sendiri, dan main feature: <code className="bg-[#333333]/50 px-2 py-1 rounded text-sm text-[#6BCF7F]">self-respect.js</code>.
+              </p>
+
             </div>
-          </div>
+          )}
 
           {/* Related Articles */}
-          <div className="mt-16 pt-8 border-t border-[#D1D1D1]">
-            <h3 className="text-2xl font-bold font-serif text-[#000000] mb-8">
+          <div className={`mt-16 pt-8 border-t transition-colors duration-700 ${isAlternateVersion ? 'border-[#333333]' : 'border-[#D1D1D1]'}`}>
+            <h3 className={`text-2xl font-bold font-serif mb-8 transition-colors duration-700 ${isAlternateVersion ? 'text-[#FFFFFF]' : 'text-[#000000]'}`}>
               Continue Reading
             </h3>
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Article 1 */}
-              <Link href="/thoughts/14460-lines-to-ask-one-question" className="group">
-                <article className="bg-white/40 backdrop-blur-sm border border-[#D1D1D1]/20 p-6 hover:bg-white/60 hover:shadow-md transition-all duration-300">
-                  <div className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
-                    Technical Deep Dive
+              <Link href="/thoughts/women-who-built-programming-then-disappeared" className="group">
+                <article className={`backdrop-blur-sm border p-6 hover:shadow-md transition-all duration-300 ${isAlternateVersion ? 'bg-[#2A2A2A]/40 border-[#333333]/20 hover:bg-[#2A2A2A]/60' : 'bg-white/40 border-[#D1D1D1]/20 hover:bg-white/60'}`}>
+                  <div className={`text-xs mb-2 uppercase tracking-widest transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999]' : 'text-[#666666]'}`}>
+                    History • Gender
                   </div>
-                  <h4 className="text-xl font-bold font-serif text-[#000000] mb-3 group-hover:text-[#3A4F5B] transition-colors">
-                    14,460 Lines to Ask One Question
+                  <h4 className={`text-xl font-bold font-serif mb-3 transition-colors ${isAlternateVersion ? 'text-[#FFFFFF] group-hover:text-[#CCCCCC]' : 'text-[#000000] group-hover:text-[#3A4F5B]'}`}>
+                    Women Who Built Programming, Then Disappeared
                   </h4>
-                  <p className="text-sm text-[#666666]">
-                    InventStor wasn't just about inventory management. It was about asking: How do we serve people better?
+                  <p className={`text-sm transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999]' : 'text-[#666666]'}`}>
+                    On the six women who invented modern programming, the industry that erased them, and why their story matters.
                   </p>
                 </article>
               </Link>
 
               {/* Article 2 */}
-              <Link href="/thoughts/from-syntax-to-empathy" className="group">
-                <article className="bg-white/40 backdrop-blur-sm border border-[#D1D1D1]/20 p-6 hover:bg-white/60 hover:shadow-md transition-all duration-300">
-                  <div className="text-xs text-[#666666] mb-2 uppercase tracking-widest">
-                    Personal Journey
+              <Link href="/thoughts/enfp-in-a-codebase-why-culture-fit-almost-kept-me-out" className="group">
+                <article className={`backdrop-blur-sm border p-6 hover:shadow-md transition-all duration-300 ${isAlternateVersion ? 'bg-[#2A2A2A]/40 border-[#333333]/20 hover:bg-[#2A2A2A]/60' : 'bg-white/40 border-[#D1D1D1]/20 hover:bg-white/60'}`}>
+                  <div className={`text-xs mb-2 uppercase tracking-widest transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999]' : 'text-[#666666]'}`}>
+                    Identity • Tech Culture
                   </div>
-                  <h4 className="text-xl font-bold font-serif text-[#000000] mb-3 group-hover:text-[#3A4F5B] transition-colors">
-                    From Syntax to Empathy: Why I'm Choosing HR
+                  <h4 className={`text-xl font-bold font-serif mb-3 transition-colors ${isAlternateVersion ? 'text-[#FFFFFF] group-hover:text-[#CCCCCC]' : 'text-[#000000] group-hover:text-[#3A4F5B]'}`}>
+                    ENFP in a Codebase: Why "Culture Fit" Almost Kept Me Out
                   </h4>
-                  <p className="text-sm text-[#666666]">
-                    I'm good at code. That's why I'm leaving it. This is the story of how InventStor showed me what I actually love.
+                  <p className={`text-sm transition-colors duration-700 ${isAlternateVersion ? 'text-[#999999]' : 'text-[#666666]'}`}>
+                    I don't fit the developer stereotype. I almost let that stop me from building something that mattered.
                   </p>
                 </article>
               </Link>
@@ -203,7 +309,7 @@ export default function Article() {
 
           {/* Back to Archive */}
           <div className="mt-12 text-center">
-            <Link href="/thoughts" className="inline-block text-[#666666] hover:text-[#000000] transition-colors">
+            <Link href="/thoughts" className={`inline-block transition-colors ${isAlternateVersion ? 'text-[#999999] hover:text-[#FFFFFF]' : 'text-[#666666] hover:text-[#000000]'}`}>
               ← Back to all articles
             </Link>
           </div>

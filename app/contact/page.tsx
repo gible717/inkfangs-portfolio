@@ -19,7 +19,7 @@ export default function Contact() {
             <p className="text-lg text-[#666666] italic mb-2">
               Let's build something meaningful together
             </p>
-            <div className="w-32 h-[1px] bg-[#D1D1D1] mx-auto mt-8"></div>
+            <div className="w-5/6 h-[1px] bg-[#D1D1D1] mx-auto mt-8"></div>
           </header>
 
           {/* Two Column Layout: Contact Info Left, Guestbook Right */}
@@ -66,30 +66,30 @@ export default function Contact() {
                 <div className="space-y-4">
                   <div>
                     <p className="text-sm text-[#D1D1D1] mb-1">Email</p>
-                    <a href="mailto:noufah.abdullah@example.com" className="text-white hover:text-[#D1D1D1] transition-colors">
-                      noufah.abdullah@example.com
+                    <a href="mailto:noufah2304@gmail.com" className="text-white hover:text-[#D1D1D1] transition-colors">
+                      noufah2304@gmail.com
                     </a>
                   </div>
                   <div>
                     <p className="text-sm text-[#D1D1D1] mb-1">LinkedIn</p>
                     <a
-                      href="https://www.linkedin.com/in/noufah-abdullah"
+                      href="https://www.linkedin.com/in/noufahabdullah"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white hover:text-[#D1D1D1] transition-colors"
                     >
-                      linkedin.com/in/noufah-abdullah
+                      linkedin.com/in/noufahabdullah
                     </a>
                   </div>
                   <div>
                     <p className="text-sm text-[#D1D1D1] mb-1">GitHub</p>
                     <a
-                      href="https://github.com/inkfangs"
+                      href="https://github.com/gible717"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white hover:text-[#D1D1D1] transition-colors"
                     >
-                      github.com/inkfangs
+                      github.com/gible717
                     </a>
                   </div>
                 </div>
